@@ -4,9 +4,9 @@ pragma solidity ^0.8.19;
 import "./interfaces/IERC20.sol";
 
 contract Swap {
-    IERC20 tokenA;
+    IERC tokenA;
     address immutable owner1;
-    IERC20 tokenB;
+    IERC tokenB;
     address immutable owner2;
 
     constructor(
@@ -15,9 +15,9 @@ contract Swap {
         address _tokenB,
         address _owner2
     ) {
-        tokenA = IERC20(_tokenA);
+        tokenA = IERC(_tokenA);
         owner1 = _owner1;
-        tokenB = IERC20(_tokenB);
+        tokenB = IERC(_tokenB);
         owner2 = _owner2;
     }
 
@@ -43,7 +43,7 @@ contract Swap {
 
     // transferring the tokens using a safeTransferFrom function
     function _safeTransferFrom(
-        IERC20 token,
+        IERC token,
         address sender,
         address to,
         uint256 amount
